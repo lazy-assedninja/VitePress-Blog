@@ -1,0 +1,11 @@
+# Mac OS
+.DS_Store
+
+# JetBrains IDE
+.idea/
+
+# VitePress
+node_modules
+dist
+.vitepress/cache
+yarn.lock
