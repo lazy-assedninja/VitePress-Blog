@@ -2,6 +2,18 @@ export default {
     title: 'Henry Huang',
     description: 'This is desc.',
     head: [
+        ['meta', {
+            name: "msapplication-TileColor",
+            content: "#000000"
+        }],
+        ['meta', {
+            name: "msapplication-config",
+            content: "/favicons/browserconfig.xml"
+        }],
+        ['meta', {
+            name: "theme-color",
+            content: "#000000"
+        }],
         ['link', {
             rel: "apple-touch-icon",
             sizes: "180x180",
@@ -31,18 +43,11 @@ export default {
             rel: "shortcut icon",
             href: "/favicons/favicon.ico"
         }],
-        ['meta', {
-            name: "msapplication-TileColor",
-            content: "#000000"
-        }],
-        ['meta', {
-            name: "msapplication-config",
-            content: "/favicons/browserconfig.xml"
-        }],
-        ['meta', {
-            name: "theme-color",
-            content: "#000000"
-        }],
+        ['script', {
+            async: true,
+            src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + process.env.GOOGLE_ADSENSE_CLIENT_ID,
+            crossorigin: "anonymous"
+        }]
     ],
     appearance: true,
     cleanUrls: true,
