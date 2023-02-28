@@ -4,7 +4,7 @@ import {data as blog} from './blog.data.js'
 </script>
 
 <template>
-  <div class="divide-y divide-gray-200 dark:divide-slate-200/5">
+  <div class="VPContent divide-y divide-gray-200 dark:divide-slate-200/5">
     <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
       <li class="py-12" v-for="{ title, href, date, description } of blog">
         <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
@@ -12,10 +12,10 @@ import {data as blog} from './blog.data.js'
           <div class="space-y-5 xl:col-span-3">
             <div class="space-y-6">
               <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                <a class="text-gray-900 dark:text-white" :href="href">{{ title }}</a>
+                <a id="frontmatter-title" :href="href">{{ title }}</a>
               </h2>
               <div
-                  class="prose dark:prose-invert max-w-none text-gray-500 dark:text-gray-300"
+                  class="max-w-none"
                   v-html="description"
               ></div>
             </div>
