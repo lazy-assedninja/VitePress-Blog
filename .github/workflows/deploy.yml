@@ -32,6 +32,10 @@ jobs:
         env:
           GOOGLE_ADSENSE_CLIENT_ID: ${{ secrets.GOOGLE_ADSENSE_CLIENT_ID }}
         run: yarn build
+      - name: Set Up ads.txt
+        env:
+          GOOGLE_ADSENSE_ADS_TXT: ${{ secrets.GOOGLE_ADSENSE_ADS_TXT }}
+        run: echo "$GOOGLE_ADSENSE_ADS_TXT" >> .vitepress/dist/ads.txt
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
         with:
