@@ -61,7 +61,7 @@ export default {
         nav: [ // https://vitepress.vuejs.org/guide/theme-nav
             {
                 text: 'Blog',
-                link: '/blog/index'
+                link: '/blog'
             },
             {
                 text: 'Docs',

@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: More about Me
-      link: /blog/
+      link: /blog
     - theme: alt
       text: View on GitHub
       link: https://github.com/henryhaung/VitePress-Blog
