@@ -3,7 +3,7 @@ title: WhatToEat - Requirement Specification
 editLink: false
 ---
 
-# {{ $frontmatter.title }}
+# {{ $frontmatter.title }} <Badge type="warning" text="deprecated" />
 
 ## 背景與動機
 ### 1. 簡介

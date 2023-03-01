@@ -3,7 +3,7 @@ title: WhatToEat - APIs
 editLink: false
 ---
 
-# {{ $frontmatter.title }}
+# {{ $frontmatter.title }} <Badge type="warning" text="deprecated" />
 
 
 ## User/Login
