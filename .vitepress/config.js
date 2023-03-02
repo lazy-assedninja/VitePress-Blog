@@ -47,7 +47,17 @@ export default {
             async: true,
             src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + process.env.GOOGLE_ADSENSE_CLIENT_ID,
             crossorigin: "anonymous"
-        }]
+        }],
+        ['script', {
+            async: true,
+            src: "https://www.googletagmanager.com/gtag/js?id=" + process.env.GOOGLE_ANALYTICS_ID,
+        }],
+        ['script', {},
+            "window.dataLayer = window.dataLayer || [];\n" +
+            "function gtag(){dataLayer.push(arguments);}\n" +
+            "gtag('js', new Date());\n" +
+            "gtag('config', '" + process.env.GOOGLE_ANALYTICS_ID + "');",
+        ]
     ],
     appearance: true,
     cleanUrls: true,
