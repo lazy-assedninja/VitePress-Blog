@@ -3,7 +3,7 @@ title: WhatToEat - DB
 editLink: false
 ---
 
-# {{ $frontmatter.title }}
+# {{ $frontmatter.title }} <Badge type="warning" text="deprecated" />
 
 
 ## UserAccount

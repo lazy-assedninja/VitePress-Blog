@@ -3,7 +3,7 @@ title: WhatToEat - Demand Analysis
 editLink: false
 ---
 
-# {{ $frontmatter.title }}
+# {{ $frontmatter.title }} <Badge type="warning" text="deprecated" />
 隨著時代的進步，各式各樣的工具順應著人類的需求而產生。
 有不少報導指出，現在的學生、白領等人存在著一種共同的煩惱：**今天吃什麼呢？**
 左思右想不知道要選擇什麼，我們把這種現象稱之為「 **吃飯選擇困難症** 」。
