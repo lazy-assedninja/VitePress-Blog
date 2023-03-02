@@ -68,6 +68,26 @@ export default {
                 link: '/docs/what-to-eat-demand-analysis'
             },
         ],
+        outline: [2, 3],
+        socialLinks: [
+            {
+                icon: {
+                    svg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">' +
+                        '<path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 ' +
+                        '2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z"/>' +
+                        '</svg>'
+                },
+                link: "mailto:henryhuang861219@gmail.com"
+            },
+            {
+                icon: "github",
+                link: "https://github.com/henryhuang1219"
+            },
+            {
+                icon: "linkedin",
+                link: "https://www.linkedin.com/in/henryhuang1219/"
+            },
+        ],
         sidebar: { // https://vitepress.vuejs.org/guide/theme-sidebar
             '/docs/': [
                 {
@@ -93,33 +113,18 @@ export default {
                 }
             ]
         },
-        outline: [2, 3],
-        socialLinks: [
-            {
-                icon: {
-                    svg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">' +
-                        '<path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 ' +
-                        '2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z"/>' +
-                        '</svg>'
-                },
-                link: "mailto:henryhuang861219@gmail.com"
-            },
-            {
-                icon: "github",
-                link: "https://github.com/henryhuang1219"
-            },
-            {
-                icon: "linkedin",
-                link: "https://www.linkedin.com/in/henryhuang1219/"
-            },
-        ],
+        editLink: { // https://vitepress.vuejs.org/guide/theme-edit-link
+            pattern: 'https://github.com/henryhuang1219/VitePress-Blog/edit/main/docs/:path',
+            text: 'Edit this page on GitHub'
+        },
         footer: {
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2022-Present Henry Huang'
         },
-        editLink: { // https://vitepress.vuejs.org/guide/theme-edit-link
-            pattern: 'https://github.com/henryhuang1219/VitePress-Blog/edit/main/docs/:path',
-            text: 'Edit this page on GitHub'
+        algolia: {
+            appId: process.env.ALGOLIA_APP_ID,
+            apiKey: process.env.ALGOLIA_API_KEY,
+            indexName: process.env.ALGOLIA_INDEX_NAME
         },
     }
 }
