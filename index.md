@@ -1,7 +1,7 @@
 ---
 layout: home
 
-title: Henry Huang
+title: Home
 hero:
   name: Henry Huang
   text: I'm an Android Developer.
