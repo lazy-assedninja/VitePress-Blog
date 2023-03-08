@@ -36,10 +36,6 @@ jobs:
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
         run: yarn build
-      - name: Set Up ads.txt
-        env:
-          GOOGLE_ADSENSE_ADS_TXT: ${{ secrets.GOOGLE_ADSENSE_ADS_TXT }}
-        run: echo "$GOOGLE_ADSENSE_ADS_TXT" >> .vitepress/dist/ads.txt
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
         with:
