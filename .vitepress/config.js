@@ -1,3 +1,11 @@
+import { SitemapStream } from 'sitemap'
+import { createWriteStream } from 'node:fs'
+import { resolve } from 'node:path'
+
+// This links array is used to temporarily store all page link information, in order to generate sitemap.
+const links = []
+const siteHostName = 'https://lazy-assedninja.com/'
+
 export default {
     title: 'Henry Huang',
     description: 'This is desc.',
@@ -135,6 +143,24 @@ export default {
             appId: process.env.ALGOLIA_APP_ID,
             apiKey: process.env.ALGOLIA_API_KEY,
             indexName: process.env.ALGOLIA_INDEX_NAME
-        },
-    }
+        }
+    },
+    srcExclude: ["**/README.md"],
+    transformHtml: (_, id, { pageData }) => {
+        if (!/[\\/]404\.html$/.test(id))
+            links.push({
+                url: pageData.relativePath.replace(/\.md$/, '.html'),
+                lastmod: pageData.lastUpdated
+            })
+    },
+    buildEnd: async ({ outDir }) => {
+        const sitemap = new SitemapStream({
+            hostname: siteHostName
+        })
+        const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+        sitemap.pipe(writeStream)
+        links.forEach((link) => sitemap.write(link))
+        sitemap.end()
+        await new Promise((r) => writeStream.on('finish', r))
+    },
 }
