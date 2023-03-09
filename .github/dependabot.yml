@@ -1,0 +1,26 @@
+version: 2
+updates:
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "henryhuang1219"
+    labels:
+      - "github-actions"
+      - "dependencies"
+    target-branch: "master"
+
+  # Maintain dependencies for yarn
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "henryhuang1219"
+    labels:
+      - "npm"
+      - "dependencies"
+    target-branch: "master"
