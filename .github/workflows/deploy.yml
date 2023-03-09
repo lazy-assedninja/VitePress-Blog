@@ -1,19 +1,13 @@
 name: Deploy
 
-# Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_dispatch:  # Allows you to run this workflow manually from the Actions tab
 
 jobs:
   build_and_deploy_blog:
     name: Build and Deploy Blog
-
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     permissions:
       pages: write
