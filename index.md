@@ -12,5 +12,5 @@ hero:
       link: /blog
     - theme: alt
       text: View on GitHub
-      link: https://github.com/henryhaung/VitePress-Blog
+      link: https://github.com/henryhuang1219/VitePress-Blog
 ---
