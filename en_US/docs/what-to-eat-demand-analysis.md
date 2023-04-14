@@ -1,5 +1,5 @@
 ---
-title: WhatToEat - Demand Analysis(中文)
+title: WhatToEat - Demand Analysis
 editLink: false
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: WhatToEat - API(中文)
+title: WhatToEat - API
 editLink: false
 ---
 

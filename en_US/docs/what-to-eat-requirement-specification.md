@@ -1,5 +1,5 @@
 ---
-title: WhatToEat - Requirement Specification(中文)
+title: WhatToEat - Requirement Specification
 editLink: false
 ---
 

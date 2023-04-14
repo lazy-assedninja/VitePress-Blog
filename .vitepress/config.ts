@@ -70,12 +70,6 @@ export default defineConfig({
             `gtag("config", "${process.env.GOOGLE_ANALYTICS_ID}");`
         ]
     ],
-    appearance: true,
-    cleanUrls: true,
-    lastUpdated: true, // https://vitepress.vuejs.org/guide/theme-last-updated
-    markdown: {
-        lineNumbers: true,
-    },
     themeConfig: {
         // logo: '/logo.png',
         // siteTitle: false, // Hide the site title text
@@ -149,12 +143,22 @@ export default defineConfig({
         }
     },
     srcExclude: ['**/README.md'],
-    transformHtml: (_, id, {pageData}) => {
-        if (!/[\\/]404\.html$/.test(id)) links.push({
-            url: pageData.relativePath.replace(/\.md$/, ''),
-            lastmod: pageData.lastUpdated
-        })
+    locales: {
+        root: {
+            label: '繁體中文',
+            lang: 'zh_TW'
+        },
+        en_US: {
+            label: 'English',
+            lang: 'en_US',
+        }
     },
+    appearance: true,
+    lastUpdated: true, // https://vitepress.vuejs.org/guide/theme-last-updated
+    markdown: {
+        lineNumbers: true,
+    },
+    cleanUrls: true,
     buildEnd: async ({outDir}) => {
         const sitemap = new SitemapStream({
             hostname: siteHostName
@@ -164,5 +168,11 @@ export default defineConfig({
         links.forEach((link) => sitemap.write(link))
         sitemap.end()
         await new Promise((r) => writeStream.on('finish', r))
+    },
+    transformHtml: (_, id, {pageData}) => {
+        if (!/[\\/]404\.html$/.test(id)) links.push({
+            url: pageData.relativePath.replace(/\.md$/, ''),
+            lastmod: pageData.lastUpdated
+        })
     },
 })

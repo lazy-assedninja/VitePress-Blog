@@ -1,5 +1,5 @@
 ---
-title: WhatToEat - DB(中文)
+title: WhatToEat - DB
 editLink: false
 ---
 
